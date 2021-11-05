@@ -17,8 +17,8 @@ from google.cloud import storage
 from google.cloud import pubsub_v1
 
 # Define global variables
-project = 'health-ai-320507'
-pubsub_topic = "maturity_country_gbq_trigger"
+project = '' # GCP project id
+pubsub_topic = "" #pubsub topic
 search_term = """((((((((["artificial intelligence") OR ("deep learning")) OR ("machine learning")) OR ("neural net")) OR ("transfer learning")) OR ("supervised learning")) OR (unsupervised learning)) ) OR (artificial intelligence[MeSH Terms])"""
 include_model = None
 
@@ -34,8 +34,8 @@ def hello_pubsub(event, context): # Cloud function entry
     scrape_include()
 
 def search(query, retmax, mindate=None, maxdate=None, reldate=None):
-    Entrez.email = 'swhebell@gmail.com'
-    Entrez.api_key = '40ba1547513d683ed2f3d5adcbc26b1ad409'
+    Entrez.email = '' # insert email
+    Entrez.api_key = '' # insert API key
     handle = Entrez.esearch(db='pubmed', 
                             retmax=retmax,
                             retmode='xml', 
@@ -48,8 +48,8 @@ def search(query, retmax, mindate=None, maxdate=None, reldate=None):
 
 def fetch_details(id_list):
     ids = ','.join(id_list)
-    Entrez.email = 'swhebell@gmail.com'
-    Entrez.api_key = '40ba1547513d683ed2f3d5adcbc26b1ad409'
+    Entrez.email = '' # Email
+    Entrez.api_key = '' # API key
     handle = Entrez.efetch(db='pubmed',
                            retmode='xml',
                            id=ids)
@@ -248,7 +248,7 @@ def predict_labels(model, df, label_name: list, logit_model=True, feature_column
 def scrape_include():
     
     # GBQ setup
-    project = 'health-ai-320507'
+    project = '' # project ID
     client = bigquery.Client(project=project)
     
     timing_query = """

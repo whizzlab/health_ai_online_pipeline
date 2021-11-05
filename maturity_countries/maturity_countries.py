@@ -19,7 +19,7 @@ from flashgeotext.geotext import GeoText
 from geopy.geocoders import Nominatim
 
 # Define gloubal variables
-project = 'health-ai-320507'
+project = '' # project ID
 mature_model = None
 characteristics_model = None
 geolocator = Nominatim(user_agent='health_ai_abstract_scraper')
