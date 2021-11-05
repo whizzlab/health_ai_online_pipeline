@@ -1,0 +1,13 @@
+# Function dependencies, for example:
+# package>=version
+
+tensorflow-cpu
+tensorflow-text
+biopython
+pandas
+numpy
+tqdm
+google-cloud-bigquery
+google-cloud-storage
+google-cloud-pubsub
+pyarrow

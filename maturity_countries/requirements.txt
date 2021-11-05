@@ -1,0 +1,14 @@
+# Function dependencies, for example:
+# package>=version
+
+tensorflow-cpu
+tensorflow-text
+pandas
+numpy
+tqdm
+google-cloud-bigquery
+google-cloud-storage
+pandas_gbq
+flashgeotext
+geopy
+pyarrow
